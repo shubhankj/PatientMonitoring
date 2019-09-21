@@ -100,8 +100,14 @@
     <None Include="Connected Services\PatientMonitoringService\DataStore1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\PatientMonitoringService\DataStore2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PatientMonitoringService\DataStoreController.wsdl" />
     <None Include="Connected Services\PatientMonitoringService\HospitalDatabaseUI.PatientMonitoringService.GetAvailableBedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PatientMonitoringService\HospitalDatabaseUI.PatientMonitoringService.PatientDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

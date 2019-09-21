@@ -24,8 +24,9 @@
   <Metadata>
     <MetadataFile FileName="DataStore.disco" MetadataType="Disco" ID="c2114b38-8c1c-41a2-91d8-8ef4144a9958" SourceId="1" SourceUrl="http://localhost:8080/DataStore?disco" />
     <MetadataFile FileName="DataStore.xsd" MetadataType="Schema" ID="2b0a908e-a8cd-4437-9d33-29fa4cc001ac" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd0" />
-    <MetadataFile FileName="DataStore1.xsd" MetadataType="Schema" ID="e399b7db-777f-4d5d-b70a-eb1f98c8da54" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd1" />
+    <MetadataFile FileName="DataStore2.xsd" MetadataType="Schema" ID="27523486-5f46-4c62-b31e-ff39a54b3627" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd2" />
     <MetadataFile FileName="DataStoreController.wsdl" MetadataType="Wsdl" ID="56f0b2de-de61-41c9-8cc8-29eebd10c198" SourceId="1" SourceUrl="http://localhost:8080/DataStore?wsdl" />
+    <MetadataFile FileName="DataStore1.xsd" MetadataType="Schema" ID="e399b7db-777f-4d5d-b70a-eb1f98c8da54" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

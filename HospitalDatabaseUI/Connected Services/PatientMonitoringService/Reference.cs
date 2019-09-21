@@ -9,7 +9,118 @@
 //------------------------------------------------------------------------------
 
 namespace HospitalDatabaseUI.PatientMonitoringService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PatientDetails", Namespace="http://schemas.datacontract.org/2004/07/DataContractsLib")]
+    [System.SerializableAttribute()]
+    public partial class PatientDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatientAgeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long PatientContactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientGenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PatientIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PatientAge {
+            get {
+                return this.PatientAgeField;
+            }
+            set {
+                if ((this.PatientAgeField.Equals(value) != true)) {
+                    this.PatientAgeField = value;
+                    this.RaisePropertyChanged("PatientAge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long PatientContact {
+            get {
+                return this.PatientContactField;
+            }
+            set {
+                if ((this.PatientContactField.Equals(value) != true)) {
+                    this.PatientContactField = value;
+                    this.RaisePropertyChanged("PatientContact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientGender {
+            get {
+                return this.PatientGenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientGenderField, value) != true)) {
+                    this.PatientGenderField = value;
+                    this.RaisePropertyChanged("PatientGender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PatientID {
+            get {
+                return this.PatientIDField;
+            }
+            set {
+                if ((this.PatientIDField.Equals(value) != true)) {
+                    this.PatientIDField = value;
+                    this.RaisePropertyChanged("PatientID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PatientMonitoringService.IDataStore")]
@@ -75,10 +186,10 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
         System.Threading.Tasks.Task<bool> SearchPatientByPatientIdAsync(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse")]
-        string GetPatientDetails(int patientId);
+        HospitalDatabaseUI.PatientMonitoringService.PatientDetails GetPatientDetails(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse")]
-        System.Threading.Tasks.Task<string> GetPatientDetailsAsync(int patientId);
+        System.Threading.Tasks.Task<HospitalDatabaseUI.PatientMonitoringService.PatientDetails> GetPatientDetailsAsync(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsContactNumberExistsResponse")]
         bool IsContactNumberExists(long contactNumber);
@@ -243,11 +354,11 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
             return base.Channel.SearchPatientByPatientIdAsync(patientId);
         }
         
-        public string GetPatientDetails(int patientId) {
+        public HospitalDatabaseUI.PatientMonitoringService.PatientDetails GetPatientDetails(int patientId) {
             return base.Channel.GetPatientDetails(patientId);
         }
         
-        public System.Threading.Tasks.Task<string> GetPatientDetailsAsync(int patientId) {
+        public System.Threading.Tasks.Task<HospitalDatabaseUI.PatientMonitoringService.PatientDetails> GetPatientDetailsAsync(int patientId) {
             return base.Channel.GetPatientDetailsAsync(patientId);
         }
         

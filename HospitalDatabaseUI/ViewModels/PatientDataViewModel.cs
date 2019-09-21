@@ -28,13 +28,11 @@ namespace HospitalDatabaseUI.ViewModels
         public void GetPatientData()
         {
             PatientMonitoringService.PatientDbQueryClient client = new PatientMonitoringService.PatientDbQueryClient();
-            string[] details = client.GetPatientDetails(patientDataModel.PatientID).Split(';');
-            if (details.Length == 4) {
-                patientDataModel.PatientName = details[0];
-                patientDataModel.PatientGender = details[1];
-                patientDataModel.PatientAge = int.Parse(details[2]);
-                patientDataModel.PatientContact = long.Parse(details[3]);
-            }
+            var model = client.GetPatientDetails(patientDataModel.PatientID);
+            patientDataModel.PatientName = model.PatientName;
+            patientDataModel.PatientGender = model.PatientGender;
+            patientDataModel.PatientAge = model.PatientAge;
+            patientDataModel.PatientContact = model.PatientContact;
         }
     }
 }
