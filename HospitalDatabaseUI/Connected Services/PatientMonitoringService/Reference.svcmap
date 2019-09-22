@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3e9243ec-4061-46d9-bd5c-d3dd03a06365" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="70ecb0b4-049e-4802-a933-fcef8feb3180" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8080/DataStore" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DataStore.disco" MetadataType="Disco" ID="c2114b38-8c1c-41a2-91d8-8ef4144a9958" SourceId="1" SourceUrl="http://localhost:8080/DataStore?disco" />
-    <MetadataFile FileName="DataStore.xsd" MetadataType="Schema" ID="2b0a908e-a8cd-4437-9d33-29fa4cc001ac" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd0" />
-    <MetadataFile FileName="DataStore2.xsd" MetadataType="Schema" ID="27523486-5f46-4c62-b31e-ff39a54b3627" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd2" />
-    <MetadataFile FileName="DataStoreController.wsdl" MetadataType="Wsdl" ID="56f0b2de-de61-41c9-8cc8-29eebd10c198" SourceId="1" SourceUrl="http://localhost:8080/DataStore?wsdl" />
-    <MetadataFile FileName="DataStore1.xsd" MetadataType="Schema" ID="e399b7db-777f-4d5d-b70a-eb1f98c8da54" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd1" />
+    <MetadataFile FileName="DataStore.disco" MetadataType="Disco" ID="3d1833e2-63df-4079-837f-f9a55740beb5" SourceId="1" SourceUrl="http://localhost:8080/DataStore?disco" />
+    <MetadataFile FileName="DataStore.xsd" MetadataType="Schema" ID="0403aa36-98ac-49f9-9002-a4d90e7b3b39" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd0" />
+    <MetadataFile FileName="DataStore1.xsd" MetadataType="Schema" ID="2b299fe1-4b34-4e32-b174-d59993baf0c4" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd2" />
+    <MetadataFile FileName="DataStoreController.wsdl" MetadataType="Wsdl" ID="b705224e-624e-4afa-81af-85277d9dcde6" SourceId="1" SourceUrl="http://localhost:8080/DataStore?wsdl" />
+    <MetadataFile FileName="DataStore2.xsd" MetadataType="Schema" ID="55803b24-3cb9-4966-b09e-3768b55709b5" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

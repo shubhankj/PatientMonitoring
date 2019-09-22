@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HospitalDatabaseUI.Models
 {
-    public enum WardType
+    public class WardDataModel : INotifyPropertyChanged
     {
-        Cardiology, ICU, Neurology, Oncology, Maternity 
-    }
-    public class WardDataModel
-    {
+        private int _wardNumber;
         private string _wardType;
-        private WardType _wardNumber;
+        public int WardNumber { get => _wardNumber; set { _wardNumber = value; OnPropertyChanged("WardNumber"); } }
+        public string WardType { get => _wardType; set { _wardType = value; OnPropertyChanged("WardType"); } }
+
+        private void OnPropertyChanged(string v)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

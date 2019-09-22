@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\320052125\PatientMonitoring\HospitalDatabaseUI\obj\Debug\
+C:\Users\320052125\PatientMonitoringWPF\HospitalDatabaseUI\obj\Debug\
 HospitalDatabaseUI
 none
 false
 DEBUG;TRACE
-C:\Users\320052125\PatientMonitoring\HospitalDatabaseUI\App.xaml
-11892971807
+C:\Users\320052125\PatientMonitoringWPF\HospitalDatabaseUI\App.xaml
+11696901948
 
-12528934303
-15-2121702768
-Views\MainWindow.xaml;
+151480601101
+17-624105255
+Views\DatabaseQueryView.xaml;
 
 False
 

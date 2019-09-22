@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HospitalDatabaseUI.Views
 {
     /// <summary>
-    /// Interaction logic for HospitalResourceRegistration.xaml
+    /// Interaction logic for DatabaseQueryView.xaml
     /// </summary>
-    public partial class HospitalResourceRegistration : Window
+    public partial class DatabaseQueryView : Window
     {
-        public HospitalResourceRegistration()
+        public DatabaseQueryView()
         {
             InitializeComponent();
         }

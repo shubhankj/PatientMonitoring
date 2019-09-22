@@ -9,20 +9,25 @@ using HospitalDatabaseUI.Models;
 namespace HospitalDatabaseUI.ViewModels
 {
     using Commands;
+    using System.Windows;
+
     class PatientDataViewModel
     {
         public PatientDataModel patientDataModel { get; set; }
-        public ICommand GetData { get; set; }
+        public ICommand GetPatientDataCommand { get; set; }
+        public ICommand UpdatePatientDataCommand { get; set; }
 
         public PatientDataViewModel()
         {
             patientDataModel = new PatientDataModel();
-            GetData = new Command(GetPatientData, CanGetData);
+            GetPatientDataCommand = new Command(GetPatientData, IsPatientExists);
+            UpdatePatientDataCommand = new Command(UpdatePatientData, IsPatientExists);
         }
 
-        private bool CanGetData(object parameter)
+        private bool IsPatientExists(object parameter)
         {
-            return true;
+            PatientMonitoringService.PatientDbQueryClient client = new PatientMonitoringService.PatientDbQueryClient();
+            return client.SearchPatientByPatientId(patientDataModel.PatientID);
         }
 
         public void GetPatientData()
@@ -33,6 +38,15 @@ namespace HospitalDatabaseUI.ViewModels
             patientDataModel.PatientGender = model.PatientGender;
             patientDataModel.PatientAge = model.PatientAge;
             patientDataModel.PatientContact = model.PatientContact;
+        }
+
+        public void UpdatePatientData()
+        {
+            PatientMonitoringService.PatientDbQueryClient client = new PatientMonitoringService.PatientDbQueryClient();
+            if (client.UpdatePatientDetails(patientDataModel.PatientID, patientDataModel.PatientName, patientDataModel.PatientGender, patientDataModel.PatientAge, patientDataModel.PatientContact))
+                MessageBox.Show("Patient Details Updated");
+            else
+                MessageBox.Show("Unexpected Error Occured!");
         }
     }
 }

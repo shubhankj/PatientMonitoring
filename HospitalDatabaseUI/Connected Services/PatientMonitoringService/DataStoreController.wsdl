@@ -31,6 +31,30 @@
   <wsdl:message name="IPatientDbQuery_GetPatientDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientDetailsResponse" />
   </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdatePatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdatePatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfBeds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfBeds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfBeds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfBedsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfWards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfWards" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfWards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfWardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetNoOfAvailableBeds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfAvailableBeds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetNoOfAvailableBeds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfAvailableBedsResponse" />
+  </wsdl:message>
   <wsdl:message name="IPatientDbQuery_IsContactNumberExists_InputMessage">
     <wsdl:part name="parameters" element="tns:IsContactNumberExists" />
   </wsdl:message>
@@ -128,6 +152,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails" message="tns:IPatientDbQuery_GetPatientDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse" message="tns:IPatientDbQuery_GetPatientDetails_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdatePatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails" message="tns:IPatientDbQuery_UpdatePatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetailsResponse" message="tns:IPatientDbQuery_UpdatePatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfBeds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds" message="tns:IPatientDbQuery_GetTotalNoOfBeds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBedsResponse" message="tns:IPatientDbQuery_GetTotalNoOfBeds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfWards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards" message="tns:IPatientDbQuery_GetTotalNoOfWards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWardsResponse" message="tns:IPatientDbQuery_GetTotalNoOfWards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfAvailableBeds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds" message="tns:IPatientDbQuery_GetNoOfAvailableBeds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBedsResponse" message="tns:IPatientDbQuery_GetNoOfAvailableBeds_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="IsContactNumberExists">
       <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExists" message="tns:IPatientDbQuery_IsContactNumberExists_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExistsResponse" message="tns:IPatientDbQuery_IsContactNumberExists_OutputMessage" />
@@ -215,6 +255,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetPatientDetails">
       <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientDetails">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfBeds">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfWards">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfAvailableBeds">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

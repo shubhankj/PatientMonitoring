@@ -37,8 +37,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,13 +69,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Models\BedDataModel.cs" />
+    <Compile Include="Models\HospitalDataModel.cs" />
     <Compile Include="Models\PatientDataModel.cs" />
     <Compile Include="Models\WardDataModel.cs" />
     <Compile Include="ViewModels\BedDataViewModel.cs" />
     <Compile Include="ViewModels\Commands\Command.cs" />
+    <Compile Include="ViewModels\HospitalDataViewModel.cs" />
     <Compile Include="ViewModels\PatientDataViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModels\WardDataViewModel.cs" />
+    <Compile Include="Views\DatabaseQueryView.xaml.cs">
+      <DependentUpon>DatabaseQueryView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -116,16 +121,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\DatabaseQueryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\PatientMonitoringService\" />

@@ -191,6 +191,30 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse")]
         System.Threading.Tasks.Task<HospitalDatabaseUI.PatientMonitoringService.PatientDetails> GetPatientDetailsAsync(int patientId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/UpdatePatientDetailsResponse")]
+        bool UpdatePatientDetails(int patientId, string patientName, string patientGender, int PatientAge, long contactNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/UpdatePatientDetailsResponse")]
+        System.Threading.Tasks.Task<bool> UpdatePatientDetailsAsync(int patientId, string patientName, string patientGender, int PatientAge, long contactNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds", ReplyAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBedsResponse")]
+        int GetTotalNoOfBeds();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds", ReplyAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBedsResponse")]
+        System.Threading.Tasks.Task<int> GetTotalNoOfBedsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards", ReplyAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWardsResponse")]
+        int GetTotalNoOfWards();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards", ReplyAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWardsResponse")]
+        System.Threading.Tasks.Task<int> GetTotalNoOfWardsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds", ReplyAction="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBedsResponse")]
+        int GetNoOfAvailableBeds();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds", ReplyAction="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBedsResponse")]
+        System.Threading.Tasks.Task<int> GetNoOfAvailableBedsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsContactNumberExistsResponse")]
         bool IsContactNumberExists(long contactNumber);
         
@@ -360,6 +384,38 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
         
         public System.Threading.Tasks.Task<HospitalDatabaseUI.PatientMonitoringService.PatientDetails> GetPatientDetailsAsync(int patientId) {
             return base.Channel.GetPatientDetailsAsync(patientId);
+        }
+        
+        public bool UpdatePatientDetails(int patientId, string patientName, string patientGender, int PatientAge, long contactNumber) {
+            return base.Channel.UpdatePatientDetails(patientId, patientName, patientGender, PatientAge, contactNumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdatePatientDetailsAsync(int patientId, string patientName, string patientGender, int PatientAge, long contactNumber) {
+            return base.Channel.UpdatePatientDetailsAsync(patientId, patientName, patientGender, PatientAge, contactNumber);
+        }
+        
+        public int GetTotalNoOfBeds() {
+            return base.Channel.GetTotalNoOfBeds();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetTotalNoOfBedsAsync() {
+            return base.Channel.GetTotalNoOfBedsAsync();
+        }
+        
+        public int GetTotalNoOfWards() {
+            return base.Channel.GetTotalNoOfWards();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetTotalNoOfWardsAsync() {
+            return base.Channel.GetTotalNoOfWardsAsync();
+        }
+        
+        public int GetNoOfAvailableBeds() {
+            return base.Channel.GetNoOfAvailableBeds();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetNoOfAvailableBedsAsync() {
+            return base.Channel.GetNoOfAvailableBedsAsync();
         }
         
         public bool IsContactNumberExists(long contactNumber) {
