@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,17 +57,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Connected Services\DataStoreService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PatientMonitoringService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientDataModel.cs" />
+    <Compile Include="Models\VitalSignsDataModel.cs" />
+    <Compile Include="ViewModels\Commands\Command.cs" />
+    <Compile Include="ViewModels\PatientAdmissionViewModel.cs" />
+    <Compile Include="ViewModels\PatientRegistrationViewModel.cs" />
+    <Compile Include="Views\PatientMonitoringView.xaml.cs">
+      <DependentUpon>PatientMonitoringView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +98,35 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\DataStoreService\DataStore.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataStoreService\DataStore1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataStoreService\DataStore2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DataStoreService\DataStoreController.wsdl" />
+    <None Include="Connected Services\DataStoreService\PatientMonitoringUI.DataStoreService.GetAvailableBedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DataStoreService\PatientMonitoringUI.DataStoreService.PatientDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PatientMonitoringService\Controller.wsdl" />
+    <None Include="Connected Services\PatientMonitoringService\PatientMonitoring.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientMonitoringService\PatientMonitoring1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientMonitoringService\PatientMonitoring2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PatientMonitoringService\PatientMonitoring3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +134,49 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\PatientMonitoringView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DataStoreService\" />
+    <WCFMetadataStorage Include="Connected Services\PatientMonitoringService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DataStoreService\DataStore.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DataStoreService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DataStoreService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\DataStoreService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientMonitoringService\PatientMonitoring.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientMonitoringService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientMonitoringService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PatientMonitoringService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

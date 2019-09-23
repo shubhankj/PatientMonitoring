@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1d4c8ae2-13f5-49ad-95f2-7d23cd08e76a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/DataStore" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataStore.disco" MetadataType="Disco" ID="2ed9f47d-f9fa-42b1-bc64-ef6ae5304c91" SourceId="1" SourceUrl="http://localhost:8080/DataStore?disco" />
+    <MetadataFile FileName="DataStore.xsd" MetadataType="Schema" ID="d72a3d4d-4fc3-47bf-8a97-71abfc031f39" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd0" />
+    <MetadataFile FileName="DataStore1.xsd" MetadataType="Schema" ID="fbf585b3-b77b-4432-9c2f-00c28a5040da" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd2" />
+    <MetadataFile FileName="DataStoreController.wsdl" MetadataType="Wsdl" ID="e84b51d6-b1ba-42da-95b5-8337bea1b5a1" SourceId="1" SourceUrl="http://localhost:8080/DataStore?wsdl" />
+    <MetadataFile FileName="DataStore2.xsd" MetadataType="Schema" ID="fe50e0b0-1ac2-4a37-a061-10aa7b49eedc" SourceId="1" SourceUrl="http://localhost:8080/DataStore?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VitalSignLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VitalSignLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/PatientMonitoring?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VitalSignContractLib" />
+  <xs:complexType name="ArrayOfVitalSign">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VitalSign" nillable="true" type="tns:VitalSign" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVitalSign" nillable="true" type="tns:ArrayOfVitalSign" />
+  <xs:complexType name="VitalSign">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsPatientVitalSignEnabled" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VitalSignContractLib" minOccurs="0" name="VitalSignType" type="q1:VitalSignType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VitalSign" nillable="true" type="tns:VitalSign" />
+</xs:schema>

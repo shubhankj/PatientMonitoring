@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VitalSignContractLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VitalSignContractLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="VitalSignType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="SPO2" />
+      <xs:enumeration value="PulseRate" />
+      <xs:enumeration value="Temperature" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VitalSignType" nillable="true" type="tns:VitalSignType" />
+</xs:schema>

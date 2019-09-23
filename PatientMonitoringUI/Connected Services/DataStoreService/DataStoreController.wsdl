@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DataStoreController" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/DataStore?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/DataStore?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/DataStore?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DataContractsLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataStore_StorePatientVitalSigns_InputMessage">
+    <wsdl:part name="parameters" element="tns:StorePatientVitalSigns" />
+  </wsdl:message>
+  <wsdl:message name="IDataStore_StorePatientVitalSigns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StorePatientVitalSignsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_SearchPatientByContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientByContact" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_SearchPatientByContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientByContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_SearchPatientByPatientId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientByPatientId" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_SearchPatientByPatientId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientByPatientIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetPatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetPatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdatePatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdatePatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfBeds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfBeds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfBeds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfBedsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfWards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfWards" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetTotalNoOfWards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalNoOfWardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetNoOfAvailableBeds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfAvailableBeds" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetNoOfAvailableBeds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfAvailableBedsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsContactNumberExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsContactNumberExists" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsContactNumberExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsContactNumberExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_RegisterPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPatient" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_RegisterPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsPatientAllocated_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPatientAllocated" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsPatientAllocated_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPatientAllocatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_AllocateResourceToPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateResourceToPatient" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_AllocateResourceToPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllocateResourceToPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_InsertBedInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBedInformation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_InsertBedInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBedInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsWardExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsWardExist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsWardExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsWardExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsBedExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBedExist" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsBedExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBedExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_InsertWardInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWardInformation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_InsertWardInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertWardInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetAvailableBed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableBed" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_GetAvailableBed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableBedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdateBedInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBedInformation" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_UpdateBedInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBedInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_Discharge_InputMessage">
+    <wsdl:part name="parameters" element="tns:Discharge" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_Discharge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DischargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsBedAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBedAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_IsBedAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBedAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_ClearPatientDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearPatientDB" />
+  </wsdl:message>
+  <wsdl:message name="IPatientDbQuery_ClearPatientDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearPatientDBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataStore">
+    <wsdl:operation name="StorePatientVitalSigns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataStore/StorePatientVitalSigns" message="tns:IDataStore_StorePatientVitalSigns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataStore/StorePatientVitalSignsResponse" message="tns:IDataStore_StorePatientVitalSigns_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPatientDbQuery">
+    <wsdl:operation name="SearchPatientByContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact" message="tns:IPatientDbQuery_SearchPatientByContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse" message="tns:IPatientDbQuery_SearchPatientByContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatientByPatientId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId" message="tns:IPatientDbQuery_SearchPatientByPatientId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse" message="tns:IPatientDbQuery_SearchPatientByPatientId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails" message="tns:IPatientDbQuery_GetPatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse" message="tns:IPatientDbQuery_GetPatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails" message="tns:IPatientDbQuery_UpdatePatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdatePatientDetailsResponse" message="tns:IPatientDbQuery_UpdatePatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfBeds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds" message="tns:IPatientDbQuery_GetTotalNoOfBeds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBedsResponse" message="tns:IPatientDbQuery_GetTotalNoOfBeds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfWards">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards" message="tns:IPatientDbQuery_GetTotalNoOfWards_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWardsResponse" message="tns:IPatientDbQuery_GetTotalNoOfWards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfAvailableBeds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds" message="tns:IPatientDbQuery_GetNoOfAvailableBeds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBedsResponse" message="tns:IPatientDbQuery_GetNoOfAvailableBeds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsContactNumberExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExists" message="tns:IPatientDbQuery_IsContactNumberExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsContactNumberExistsResponse" message="tns:IPatientDbQuery_IsContactNumberExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/RegisterPatient" message="tns:IPatientDbQuery_RegisterPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/RegisterPatientResponse" message="tns:IPatientDbQuery_RegisterPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPatientAllocated">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsPatientAllocated" message="tns:IPatientDbQuery_IsPatientAllocated_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsPatientAllocatedResponse" message="tns:IPatientDbQuery_IsPatientAllocated_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllocateResourceToPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/AllocateResourceToPatient" message="tns:IPatientDbQuery_AllocateResourceToPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/AllocateResourceToPatientResponse" message="tns:IPatientDbQuery_AllocateResourceToPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBedInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/InsertBedInformation" message="tns:IPatientDbQuery_InsertBedInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/InsertBedInformationResponse" message="tns:IPatientDbQuery_InsertBedInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsWardExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsWardExist" message="tns:IPatientDbQuery_IsWardExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsWardExistResponse" message="tns:IPatientDbQuery_IsWardExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBedExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsBedExist" message="tns:IPatientDbQuery_IsBedExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsBedExistResponse" message="tns:IPatientDbQuery_IsBedExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertWardInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/InsertWardInformation" message="tns:IPatientDbQuery_InsertWardInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/InsertWardInformationResponse" message="tns:IPatientDbQuery_InsertWardInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetAvailableBed" message="tns:IPatientDbQuery_GetAvailableBed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetAvailableBedResponse" message="tns:IPatientDbQuery_GetAvailableBed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBedInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdateBedInformation" message="tns:IPatientDbQuery_UpdateBedInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/UpdateBedInformationResponse" message="tns:IPatientDbQuery_UpdateBedInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Discharge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/Discharge" message="tns:IPatientDbQuery_Discharge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/DischargeResponse" message="tns:IPatientDbQuery_Discharge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBedAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsBedAvailable" message="tns:IPatientDbQuery_IsBedAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsBedAvailableResponse" message="tns:IPatientDbQuery_IsBedAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPatientDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/ClearPatientDB" message="tns:IPatientDbQuery_ClearPatientDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/ClearPatientDBResponse" message="tns:IPatientDbQuery_ClearPatientDB_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataStoreController" type="tns:IDataStore">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StorePatientVitalSigns">
+      <soap:operation soapAction="http://tempuri.org/IDataStore/StorePatientVitalSigns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PatientDBQueryController" type="tns:IPatientDbQuery">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchPatientByContact">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatientByPatientId">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatientDetails">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/UpdatePatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfBeds">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfBeds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalNoOfWards">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetTotalNoOfWards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfAvailableBeds">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetNoOfAvailableBeds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsContactNumberExists">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsContactNumberExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/RegisterPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPatientAllocated">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsPatientAllocated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllocateResourceToPatient">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/AllocateResourceToPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBedInformation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/InsertBedInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsWardExist">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsWardExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBedExist">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsBedExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWardInformation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/InsertWardInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBed">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetAvailableBed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBedInformation">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/UpdateBedInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Discharge">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/Discharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBedAvailable">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsBedAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPatientDB">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/ClearPatientDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataStoreController">
+    <wsdl:port name="DataStoreController" binding="tns:DataStoreController">
+      <soap:address location="http://localhost:8080/DataStore/DataStoreControllerLib" />
+    </wsdl:port>
+    <wsdl:port name="PatientDBQueryController" binding="tns:PatientDBQueryController">
+      <soap:address location="http://localhost:8080/DataStore/PatientDBQueryControllerLib" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
