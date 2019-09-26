@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:PatientMonitoringUI.Views"
         xmlns:vms="clr-namespace:PatientMonitoringUI.ViewModels"
         mc:Ignorable="d"
-        Title="PatientMonitoringView" Height="450" Width="800">
+        Title="PatientMonitoringView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <vms:PatientRegistrationViewModel x:Key="Registration"/>
+        <vms:PatientAdmissionViewModel x:Key="Admission"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -43,6 +44,7 @@
                         <ComboBoxItem>Male</ComboBoxItem>
                         <ComboBoxItem>Female</ComboBoxItem>
                     </ComboBox>
+                    
                     <Label Grid.Column="0" Grid.Row="4" Margin="10">Contact Number</Label>
                     <TextBox Name="PatientContact" Grid.Column="1" Grid.Row="4" Margin="10" Text="{Binding Path=patientDataModel.PatientContact, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
@@ -50,7 +52,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Admit Patient">
-                <Grid DataContext="{StaticResource Admission}">
+                <Grid DataContext="{StaticResource Admission}" Margin="20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="200"/>
@@ -63,23 +65,27 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0">Enter the Patient ID:</Label>
-                        <TextBox Grid.Row="0" Grid.Column="1" Height="50" Text="{Binding Path=patientVitalSignsDB., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="1" Grid.Column="0">Select the vital signs:</Label>
-                        <CheckBox Grid.Row="2" Grid.Column="0" Height="100" Margin="10">SPO2</CheckBox>
-                        <CheckBox Grid.Row="3" Grid.Column="0" Margin="10">Pulse Rate</CheckBox>
-                        <CheckBox Grid.Row="4" Grid.Column="0" Margin="10">Temperature</CheckBox>
-                        <Button Width="100" Name="SubmitVitalSigns" Content="Submit" Grid.Row="5" Grid.Column="0" Margin="10"/>
+                    <Label Grid.Row="0" Grid.Column="0">Enter the Patient ID:</Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" Height="30" Text="{Binding Path=patientDataModel.PatientId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Grid.Row="1" Grid.Column="0">Select Ward Type:</Label>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=patientDataModel.WardType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0" Height="30">
+                        <ComboBoxItem>Cardiology</ComboBoxItem>
+                        <ComboBoxItem>ICU</ComboBoxItem>
+                        <ComboBoxItem>Neurology</ComboBoxItem>
+                        <ComboBoxItem>Oncology</ComboBoxItem>
+                        <ComboBoxItem>Maternity</ComboBoxItem>
+                    </ComboBox>
+                    <Label Grid.Row="2" Grid.Column="0">Select the vital signs:</Label>
+                    <CheckBox Grid.Row="3" Grid.Column="0" IsChecked="{Binding Path=vitalSignsDataModel.VitalSigns[SPO2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10">SPO2</CheckBox>
+                    <CheckBox Grid.Row="4" Grid.Column="0" IsChecked="{Binding Path=vitalSignsDataModel.VitalSigns[PulseRate], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10">PulseRate</CheckBox>
+                    <CheckBox Grid.Row="5" Grid.Column="0" IsChecked="{Binding Path=vitalSignsDataModel.VitalSigns[Temperature], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10">Temperature</CheckBox>
+                    <Button Grid.Row="6" Grid.Column="0" Command="{Binding AdmitPatientCommand}" Width="100" Margin="10">Submit</Button>
                 </Grid>
             </TabItem>
 
         </TabControl>
 
-    </Grid>
-
-
-
-    </TabControl>
     </Grid>
 </Window>

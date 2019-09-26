@@ -13,17 +13,17 @@
   <wsdl:message name="IDataStore_StorePatientVitalSigns_OutputMessage">
     <wsdl:part name="parameters" element="tns:StorePatientVitalSignsResponse" />
   </wsdl:message>
-  <wsdl:message name="IPatientDbQuery_SearchPatientByContact_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchPatientByContact" />
+  <wsdl:message name="IPatientDbQuery_GetPatientID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientID" />
   </wsdl:message>
-  <wsdl:message name="IPatientDbQuery_SearchPatientByContact_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchPatientByContactResponse" />
+  <wsdl:message name="IPatientDbQuery_GetPatientID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IPatientDbQuery_SearchPatientByPatientId_InputMessage">
-    <wsdl:part name="parameters" element="tns:SearchPatientByPatientId" />
+  <wsdl:message name="IPatientDbQuery_IsPatientExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPatientExists" />
   </wsdl:message>
-  <wsdl:message name="IPatientDbQuery_SearchPatientByPatientId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SearchPatientByPatientIdResponse" />
+  <wsdl:message name="IPatientDbQuery_IsPatientExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPatientExistsResponse" />
   </wsdl:message>
   <wsdl:message name="IPatientDbQuery_GetPatientDetails_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPatientDetails" />
@@ -140,13 +140,13 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPatientDbQuery">
-    <wsdl:operation name="SearchPatientByContact">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact" message="tns:IPatientDbQuery_SearchPatientByContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse" message="tns:IPatientDbQuery_SearchPatientByContact_OutputMessage" />
+    <wsdl:operation name="GetPatientID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientID" message="tns:IPatientDbQuery_GetPatientID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientIDResponse" message="tns:IPatientDbQuery_GetPatientID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SearchPatientByPatientId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId" message="tns:IPatientDbQuery_SearchPatientByPatientId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse" message="tns:IPatientDbQuery_SearchPatientByPatientId_OutputMessage" />
+    <wsdl:operation name="IsPatientExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/IsPatientExists" message="tns:IPatientDbQuery_IsPatientExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPatientDbQuery/IsPatientExistsResponse" message="tns:IPatientDbQuery_IsPatientExists_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPatientDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails" message="tns:IPatientDbQuery_GetPatientDetails_InputMessage" />
@@ -235,8 +235,8 @@
   </wsdl:binding>
   <wsdl:binding name="PatientDBQueryController" type="tns:IPatientDbQuery">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="SearchPatientByContact">
-      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContact" style="document" />
+    <wsdl:operation name="GetPatientID">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/GetPatientID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -244,8 +244,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchPatientByPatientId">
-      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId" style="document" />
+    <wsdl:operation name="IsPatientExists">
+      <soap:operation soapAction="http://tempuri.org/IPatientDbQuery/IsPatientExists" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -173,17 +173,17 @@ namespace PatientMonitoringUI.DataStoreService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DataStoreService.IPatientDbQuery")]
     public interface IPatientDbQuery {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse")]
-        string SearchPatientByContact(long contactNumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientID", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientIDResponse")]
+        string GetPatientID(long contactNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse")]
-        System.Threading.Tasks.Task<string> SearchPatientByContactAsync(long contactNumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientID", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientIDResponse")]
+        System.Threading.Tasks.Task<string> GetPatientIDAsync(long contactNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse")]
-        bool SearchPatientByPatientId(int patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsPatientExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsPatientExistsResponse")]
+        bool IsPatientExists(int patientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse")]
-        System.Threading.Tasks.Task<bool> SearchPatientByPatientIdAsync(int patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsPatientExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsPatientExistsResponse")]
+        System.Threading.Tasks.Task<bool> IsPatientExistsAsync(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse")]
         PatientMonitoringUI.DataStoreService.PatientDetails GetPatientDetails(int patientId);
@@ -362,20 +362,20 @@ namespace PatientMonitoringUI.DataStoreService {
                 base(binding, remoteAddress) {
         }
         
-        public string SearchPatientByContact(long contactNumber) {
-            return base.Channel.SearchPatientByContact(contactNumber);
+        public string GetPatientID(long contactNumber) {
+            return base.Channel.GetPatientID(contactNumber);
         }
         
-        public System.Threading.Tasks.Task<string> SearchPatientByContactAsync(long contactNumber) {
-            return base.Channel.SearchPatientByContactAsync(contactNumber);
+        public System.Threading.Tasks.Task<string> GetPatientIDAsync(long contactNumber) {
+            return base.Channel.GetPatientIDAsync(contactNumber);
         }
         
-        public bool SearchPatientByPatientId(int patientId) {
-            return base.Channel.SearchPatientByPatientId(patientId);
+        public bool IsPatientExists(int patientId) {
+            return base.Channel.IsPatientExists(patientId);
         }
         
-        public System.Threading.Tasks.Task<bool> SearchPatientByPatientIdAsync(int patientId) {
-            return base.Channel.SearchPatientByPatientIdAsync(patientId);
+        public System.Threading.Tasks.Task<bool> IsPatientExistsAsync(int patientId) {
+            return base.Channel.IsPatientExistsAsync(patientId);
         }
         
         public PatientMonitoringUI.DataStoreService.PatientDetails GetPatientDetails(int patientId) {

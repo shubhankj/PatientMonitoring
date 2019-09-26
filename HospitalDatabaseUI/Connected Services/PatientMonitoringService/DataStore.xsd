@@ -14,31 +14,31 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchPatientByContact">
+  <xs:element name="GetPatientID">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="contactNumber" type="xs:long" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchPatientByContactResponse">
+  <xs:element name="GetPatientIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SearchPatientByContactResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GetPatientIDResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchPatientByPatientId">
+  <xs:element name="IsPatientExists">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="patientId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchPatientByPatientIdResponse">
+  <xs:element name="IsPatientExistsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SearchPatientByPatientIdResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="IsPatientExistsResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -130,7 +130,7 @@
         <xs:element minOccurs="0" name="contactNumber" type="xs:long" />
         <xs:element minOccurs="0" name="patientName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="patientGender" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="PatientAge" type="xs:double" />
+        <xs:element minOccurs="0" name="PatientAge" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

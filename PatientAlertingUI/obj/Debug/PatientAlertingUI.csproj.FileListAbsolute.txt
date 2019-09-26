@@ -1,0 +1,16 @@
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\bin\Debug\PatientAlertingUI.exe.config
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\bin\Debug\PatientAlertingUI.exe
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\bin\Debug\PatientAlertingUI.pdb
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.csprojAssemblyReference.cache
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\Views\HospitalLayoutView.g.cs
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\App.g.cs
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI_MarkupCompile.cache
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI_MarkupCompile.lref
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\Views\HospitalLayoutView.baml
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.g.resources
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.Properties.Resources.resources
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.csproj.GenerateResource.cache
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.csproj.CoreCompileInputs.cache
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.exe
+C:\Users\320052125\PatientMonitoringWPF\PatientAlertingUI\obj\Debug\PatientAlertingUI.pdb

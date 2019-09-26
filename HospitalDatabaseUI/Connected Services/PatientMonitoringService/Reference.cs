@@ -173,17 +173,17 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PatientMonitoringService.IPatientDbQuery")]
     public interface IPatientDbQuery {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse")]
-        string SearchPatientByContact(long contactNumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientID", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientIDResponse")]
+        string GetPatientID(long contactNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByContact", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByContactResponse")]
-        System.Threading.Tasks.Task<string> SearchPatientByContactAsync(long contactNumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientID", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientIDResponse")]
+        System.Threading.Tasks.Task<string> GetPatientIDAsync(long contactNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse")]
-        bool SearchPatientByPatientId(int patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsPatientExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsPatientExistsResponse")]
+        bool IsPatientExists(int patientId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientId", ReplyAction="http://tempuri.org/IPatientDbQuery/SearchPatientByPatientIdResponse")]
-        System.Threading.Tasks.Task<bool> SearchPatientByPatientIdAsync(int patientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsPatientExists", ReplyAction="http://tempuri.org/IPatientDbQuery/IsPatientExistsResponse")]
+        System.Threading.Tasks.Task<bool> IsPatientExistsAsync(int patientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/GetPatientDetails", ReplyAction="http://tempuri.org/IPatientDbQuery/GetPatientDetailsResponse")]
         HospitalDatabaseUI.PatientMonitoringService.PatientDetails GetPatientDetails(int patientId);
@@ -222,10 +222,10 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
         System.Threading.Tasks.Task<bool> IsContactNumberExistsAsync(long contactNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/RegisterPatient", ReplyAction="http://tempuri.org/IPatientDbQuery/RegisterPatientResponse")]
-        string RegisterPatient(long contactNumber, string patientName, string patientGender, double PatientAge);
+        string RegisterPatient(long contactNumber, string patientName, string patientGender, int PatientAge);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/RegisterPatient", ReplyAction="http://tempuri.org/IPatientDbQuery/RegisterPatientResponse")]
-        System.Threading.Tasks.Task<string> RegisterPatientAsync(long contactNumber, string patientName, string patientGender, double PatientAge);
+        System.Threading.Tasks.Task<string> RegisterPatientAsync(long contactNumber, string patientName, string patientGender, int PatientAge);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPatientDbQuery/IsPatientAllocated", ReplyAction="http://tempuri.org/IPatientDbQuery/IsPatientAllocatedResponse")]
         bool IsPatientAllocated(int patientID);
@@ -362,20 +362,20 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
                 base(binding, remoteAddress) {
         }
         
-        public string SearchPatientByContact(long contactNumber) {
-            return base.Channel.SearchPatientByContact(contactNumber);
+        public string GetPatientID(long contactNumber) {
+            return base.Channel.GetPatientID(contactNumber);
         }
         
-        public System.Threading.Tasks.Task<string> SearchPatientByContactAsync(long contactNumber) {
-            return base.Channel.SearchPatientByContactAsync(contactNumber);
+        public System.Threading.Tasks.Task<string> GetPatientIDAsync(long contactNumber) {
+            return base.Channel.GetPatientIDAsync(contactNumber);
         }
         
-        public bool SearchPatientByPatientId(int patientId) {
-            return base.Channel.SearchPatientByPatientId(patientId);
+        public bool IsPatientExists(int patientId) {
+            return base.Channel.IsPatientExists(patientId);
         }
         
-        public System.Threading.Tasks.Task<bool> SearchPatientByPatientIdAsync(int patientId) {
-            return base.Channel.SearchPatientByPatientIdAsync(patientId);
+        public System.Threading.Tasks.Task<bool> IsPatientExistsAsync(int patientId) {
+            return base.Channel.IsPatientExistsAsync(patientId);
         }
         
         public HospitalDatabaseUI.PatientMonitoringService.PatientDetails GetPatientDetails(int patientId) {
@@ -426,11 +426,11 @@ namespace HospitalDatabaseUI.PatientMonitoringService {
             return base.Channel.IsContactNumberExistsAsync(contactNumber);
         }
         
-        public string RegisterPatient(long contactNumber, string patientName, string patientGender, double PatientAge) {
+        public string RegisterPatient(long contactNumber, string patientName, string patientGender, int PatientAge) {
             return base.Channel.RegisterPatient(contactNumber, patientName, patientGender, PatientAge);
         }
         
-        public System.Threading.Tasks.Task<string> RegisterPatientAsync(long contactNumber, string patientName, string patientGender, double PatientAge) {
+        public System.Threading.Tasks.Task<string> RegisterPatientAsync(long contactNumber, string patientName, string patientGender, int PatientAge) {
             return base.Channel.RegisterPatientAsync(contactNumber, patientName, patientGender, PatientAge);
         }
         

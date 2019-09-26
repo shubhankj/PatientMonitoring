@@ -9,12 +9,9 @@ namespace PatientMonitoringUI.Models
 {
     class VitalSignsDataModel:INotifyPropertyChanged
     {
-        public enum VitalSignType
-        {
-            SPO2, Temperature, PulseRate
-        }
-        private List<VitalSignType> _patientVitalSigns;
-        public List<VitalSignType> PatientVitalSigns { get => _patientVitalSigns; set { _patientVitalSigns = value; OnPropertyChanged("PatientVitalSigns "); } }
+        private Dictionary<string, bool> _vitalSigns = new Dictionary<string, bool>{ { "SPO2", false}, {"PulseRate", false}, { "Temperature", false } };
+
+        public Dictionary<string, bool> VitalSigns { get => _vitalSigns; set { _vitalSigns = value; OnPropertyChanged("VitalSigns"); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

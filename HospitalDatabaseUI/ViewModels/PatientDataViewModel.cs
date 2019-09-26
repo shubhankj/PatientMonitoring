@@ -27,7 +27,7 @@ namespace HospitalDatabaseUI.ViewModels
         private bool IsPatientExists(object parameter)
         {
             PatientMonitoringService.PatientDbQueryClient client = new PatientMonitoringService.PatientDbQueryClient();
-            return client.SearchPatientByPatientId(patientDataModel.PatientID);
+            return client.IsPatientExists(patientDataModel.PatientID);
         }
 
         public void GetPatientData()

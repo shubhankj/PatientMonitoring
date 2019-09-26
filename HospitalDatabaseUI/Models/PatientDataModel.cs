@@ -9,8 +9,8 @@ namespace HospitalDatabaseUI.Models
 {
     public class PatientDataModel : INotifyPropertyChanged
     {
-        private int _patientID = 93;
-        private string _patientName = "sj";
+        private int _patientID;
+        private string _patientName;
         private string _patientGender;
         private int _patientAge;
         private long _patientContact;

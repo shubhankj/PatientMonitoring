@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="04eb9b74-3ab9-4c3e-a02d-f5016aae3f1f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/PatientMonitoring" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PatientMonitoring.xsd" MetadataType="Schema" ID="6d39f697-990f-4a3a-83b6-779efab42e81" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?xsd=xsd2" />
+    <MetadataFile FileName="PatientMonitoring.disco" MetadataType="Disco" ID="dcbc673f-8cfd-45e0-830b-76ac03f4beec" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?disco" />
+    <MetadataFile FileName="Controller.wsdl" MetadataType="Wsdl" ID="8efc6926-2201-49f8-be5d-469045a139da" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?wsdl" />
+    <MetadataFile FileName="PatientMonitoring1.xsd" MetadataType="Schema" ID="2e218b0c-81b4-4bb8-9f50-616e36b67602" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?xsd=xsd1" />
+    <MetadataFile FileName="PatientMonitoring2.xsd" MetadataType="Schema" ID="a5ef93f7-de7b-47d7-b0b3-91e86d2c44b4" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?xsd=xsd3" />
+    <MetadataFile FileName="PatientMonitoring3.xsd" MetadataType="Schema" ID="3898cd61-522f-4c5c-b0ba-cf834ef5da9f" SourceId="1" SourceUrl="http://localhost:8080/PatientMonitoring?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
